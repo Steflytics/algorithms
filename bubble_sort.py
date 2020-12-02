@@ -1,21 +1,33 @@
+# Define function for user input
 def user_input():
+    # Create empty list
     list_of_numbers = []
+    # Initialize variables for While loop
     new_number = True
-    valid = False
+    valid = True
+    # While user wants new number
     while new_number:
+        # Use try to catch potential false user input like non integer values
         try:
+            # convert input which is a string to integer
             number = int(input("Enter an integer "))
+            # add the integer to list
             list_of_numbers.append(number)
-            valid = False
+            # set variable valid to true fot next valid iteration
+            valid = True
+        # exception if try returns an error
         except:
+            # skipt next steps
             continue
-        while not valid:
+        while valid:
+            # ask user for another integer
             next_number = input("Another number to input? (y/n) ")
             if next_number == 'n':
-                valid = True
+                valid = False
                 new_number = False
             if next_number == 'y':
-                valid = True
+                valid = False
+    # return the list
     return list_of_numbers
 
 # Define function for sorting
