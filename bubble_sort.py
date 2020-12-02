@@ -31,7 +31,8 @@ def user_input():
     return list_of_numbers
 
 # Define function for sorting
-def bubble_sort(input_list):
+def bubble_sort():
+    input_list = user_input()
     # set sorted variable to false
     sorted = False
     # while sorted = false go ahead
@@ -49,4 +50,4 @@ def bubble_sort(input_list):
     # return the bubble sorted list
     return input_list
 
-print(bubble_sort(user_input()))
+print(bubble_sort())
